@@ -61,5 +61,20 @@ namespace BurgerShack.Controllers
       }
     }
 
+    [HttpDelete("{id}")]
+    public ActionResult<List<Side>> Delete(int id)
+    {
+      try
+      {
+        Sides.Remove(Sides[id]);
+        return Sides;
+      }
+      catch (Exception ex)
+      {
+        Console.WriteLine(ex);
+        return NotFound("{\"error\": \"No such side!\"}");
+      }
+    }
+
   }
 }
