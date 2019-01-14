@@ -45,6 +45,21 @@ namespace BurgerShack.Controllers
       return Sides;
     }
 
+    [HttpPut("{id}")]
+    public ActionResult<List<Side>> Put(int id, [FromBody] Side side)
+    {
+      try
+      {
+        Sides[id] = side;
+        return Sides;
+
+      }
+      catch (Exception ex)
+      {
+        Console.WriteLine(ex);
+        return NotFound("{\"error\": \"No such side!\"}");
+      }
+    }
 
   }
 }
