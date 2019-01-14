@@ -1,0 +1,14 @@
+/Users/Chrissy/source/codeworks/csharp/BurgerShack/bin/Debug/netcoreapp2.2/BurgerShack.deps.json
+/Users/Chrissy/source/codeworks/csharp/BurgerShack/bin/Debug/netcoreapp2.2/BurgerShack.runtimeconfig.json
+/Users/Chrissy/source/codeworks/csharp/BurgerShack/bin/Debug/netcoreapp2.2/BurgerShack.runtimeconfig.dev.json
+/Users/Chrissy/source/codeworks/csharp/BurgerShack/bin/Debug/netcoreapp2.2/BurgerShack.dll
+/Users/Chrissy/source/codeworks/csharp/BurgerShack/bin/Debug/netcoreapp2.2/BurgerShack.pdb
+/Users/Chrissy/source/codeworks/csharp/BurgerShack/obj/Debug/netcoreapp2.2/BurgerShack.csprojAssemblyReference.cache
+/Users/Chrissy/source/codeworks/csharp/BurgerShack/obj/Debug/netcoreapp2.2/BurgerShack.csproj.CoreCompileInputs.cache
+/Users/Chrissy/source/codeworks/csharp/BurgerShack/obj/Debug/netcoreapp2.2/BurgerShack.RazorAssemblyInfo.cache
+/Users/Chrissy/source/codeworks/csharp/BurgerShack/obj/Debug/netcoreapp2.2/BurgerShack.RazorAssemblyInfo.cs
+/Users/Chrissy/source/codeworks/csharp/BurgerShack/obj/Debug/netcoreapp2.2/BurgerShack.AssemblyInfoInputs.cache
+/Users/Chrissy/source/codeworks/csharp/BurgerShack/obj/Debug/netcoreapp2.2/BurgerShack.AssemblyInfo.cs
+/Users/Chrissy/source/codeworks/csharp/BurgerShack/obj/Debug/netcoreapp2.2/BurgerShack.RazorTargetAssemblyInfo.cache
+/Users/Chrissy/source/codeworks/csharp/BurgerShack/obj/Debug/netcoreapp2.2/BurgerShack.dll
+/Users/Chrissy/source/codeworks/csharp/BurgerShack/obj/Debug/netcoreapp2.2/BurgerShack.pdb
