@@ -34,8 +34,15 @@ namespace BurgerShack.Controllers
       catch (Exception ex)
       {
         Console.WriteLine(ex);
-        return NotFound();
+        return NotFound("{\"error\": \"No such side!\"}");
       }
+    }
+
+    [HttpPost]
+    public IEnumerable<Side> Post([FromBody] Side side)
+    {
+      Sides.Add(side);
+      return Sides;
     }
 
 
