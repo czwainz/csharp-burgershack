@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using BurgerShack.Models;
+using BurgerShack.Repositories;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BurgerShack.Controllers
@@ -11,56 +12,61 @@ namespace BurgerShack.Controllers
   [ApiController]
   public class BurgersController : ControllerBase
   {
-
-    public List<Burger> Burgers = new List<Burger>()
+    private readonly BurgerRepository _burgerRepo;
+    public BurgersController(BurgerRepository burgerRepo)
     {
-      new Burger("Chrissy", "Turkey Burger", 5.99f),
-      new Burger("Different", "Vegetarian", 8.54f),
-      new Burger("Another", "Another vegetarian", 5.55f)
-
-  };
+      _burgerRepo = burgerRepo;
+    }
 
 
     // GET api/Burgers
     [HttpGet]
-    public IEnumerable<Burger> Get()
+    public ActionResult<IEnumerable<Burger>> Get()
     {
-      return Burgers;
+      return Ok(_burgerRepo.GetAllBurgers());
     }
 
     // GET api/values/5
     [HttpGet("{id}")]
     public ActionResult<Burger> Get(int id)
     {
-      try
+      Burger result = _burgerRepo.GetBurgerByID(id);
+      if (result != null)
       {
-        return Burgers[id];
+        return Ok(result);
       }
-      catch (Exception ex)
-      {
-        Console.WriteLine(ex);
-        return NotFound();
-      }
+      return NotFound();
+
     }
 
     // POST api/values
     [HttpPost]
     public ActionResult<List<Burger>> Post([FromBody] Burger burger)
     {
-      Burgers.Add(burger);
-      return Burgers;
+      return Created("/api/burgers/", _burgerRepo.AddBurger(burger));
     }
 
     // PUT api/values/5
     [HttpPut("{id}")]
-    public void Put(int id, [FromBody] string value)
+    public ActionResult<Burger> Put(int id, [FromBody] Burger burger)
     {
+      Burger result = _burgerRepo.EditBurger(id, burger);
+      if (result != null)
+      {
+        return result;
+      }
+      return NotFound();
     }
 
     // DELETE api/values/5
     [HttpDelete("{id}")]
-    public void Delete(int id)
+    public ActionResult<string> Delete(int id)
     {
+      if (_burgerRepo.DeleteBurger(id))
+      {
+        return Ok("Success");
+      }
+      return NotFound("No burger to delete");
     }
   }
 }
