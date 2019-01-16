@@ -35,7 +35,7 @@ namespace BurgerShack.Controllers
       {
         return Ok(result);
       }
-      return NotFound();
+      return BadRequest();
 
     }
 
@@ -43,7 +43,8 @@ namespace BurgerShack.Controllers
     [HttpPost]
     public ActionResult<List<Burger>> Post([FromBody] Burger burger)
     {
-      return Created("/api/burgers/", _burgerRepo.AddBurger(burger));
+      Burger result = _burgerRepo.AddBurger(burger);
+      return Created("/api/burgers/" + result.Id, result);
     }
 
     // PUT api/values/5
@@ -58,7 +59,7 @@ namespace BurgerShack.Controllers
       return NotFound();
     }
 
-    // DELETE api/values/5
+    // // DELETE api/values/5
     [HttpDelete("{id}")]
     public ActionResult<string> Delete(int id)
     {
