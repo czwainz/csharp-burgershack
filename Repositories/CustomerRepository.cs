@@ -18,14 +18,11 @@ namespace BurgerShack.Repositories
 
     public Customer AddCustomer(Customer newCust)
     {
-      int id = _db.ExecuteScalar<int>(@"INSERT INTO Sides (name, favoriteBurgers)
-      VALUES (@Name, @FavoriteBurgers); 
- 	      SELECT LAST_INSERT_ID();",
-         newCust);
-      if (id == 0)
+      int id = _db.ExecuteScalar<int>(@"INSERT INTO Customers (name)"
+      + "VALUES (@Name); SELECT LAST_INSERT_ID()", new
       {
-        return null;
-      }
+        newCust.Name,
+      });
       newCust.Id = id;
       return newCust;
     }

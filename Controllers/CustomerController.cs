@@ -33,10 +33,10 @@ namespace BurgerShack.Controllers
 
     // POST api/values
     [HttpPost]
-    public ActionResult<List<Burger>> Post([FromBody] Customer customer)
+    public ActionResult<Customer> Post([FromBody] Customer customer)
     {
       Customer result = _customerRepo.AddCustomer(customer);
-      return Created("/api/customers/" + result.Id, result);
+      return Created("/api/customer/" + result.Id, result);
     }
 
     // PUT api/values/5
