@@ -1,3 +1,5 @@
+
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,12 +12,12 @@ namespace BurgerShack.Controllers
 {
   [Route("api/[controller]")]
   [ApiController]
-  public class CustomerController : ControllerBase
+  public class CustomerBurgerController : ControllerBase
   {
-    private readonly CustomerRepository _customerRepo;
-    public CustomerController(CustomerRepository customerRepo)
+    private readonly CustomerBurgerRepository _custBurgRepo;
+    public CustomerBurgerController(CustomerBurgerRepository cbr)
     {
-      _customerRepo = customerRepo;
+      _custBurgRepo = cbr;
     }
     // GET api/values
     // [HttpGet]
@@ -33,10 +35,10 @@ namespace BurgerShack.Controllers
 
     // POST api/values
     [HttpPost]
-    public ActionResult<Customer> Post([FromBody] Customer customer)
+    public ActionResult<string> Post([FromBody] CustomerBurger cb)
     {
-      Customer result = _customerRepo.AddCustomer(customer);
-      return Created("/api/customer/" + result.Id, result);
+      CustomerBurger result = _custBurgRepo.AddCustomerBurger(cb);
+      return Created("/api/customerburger/" + result.Id, result);
     }
 
     // PUT api/values/5
@@ -46,15 +48,15 @@ namespace BurgerShack.Controllers
     // }
 
     // DELETE api/values/5
-    [HttpDelete("{id}")]
-    public ActionResult<string> Delete(int id)
-    {
-      if (_customerRepo.DeleteCustomer(id))
-      {
-        return Ok("Success");
-      }
-      return NotFound("No customer to delete");
-    }
+    // [HttpDelete("{id}")]
+    // public ActionResult<string> Delete(int id)
+    // {
+    //   if (_customerRepo.DeleteCustomer(id))
+    //   {
+    //     return Ok("Success");
+    //   }
+    //   return NotFound("No customer to delete");
+    // }
 
 
   }
