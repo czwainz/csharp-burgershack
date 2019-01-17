@@ -20,11 +20,16 @@ namespace BurgerShack.Controllers
       _custBurgRepo = cbr;
     }
     // GET api/values
-    // [HttpGet]
-    // public ActionResult<IEnumerable<string>> Get()
-    // {
-    //   return new string[] { "value1", "value2" };
-    // }
+    [HttpGet("{id}")]
+    public ActionResult<IEnumerable<Burger>> Get(int id)
+    {
+      IEnumerable<Burger> result = _custBurgRepo.GetBurgersByCustomerId(id);
+      if (result != null)
+      {
+        return Ok(result);
+      }
+      return BadRequest();
+    }
 
     // GET api/values/5
     // [HttpGet("{id}")]

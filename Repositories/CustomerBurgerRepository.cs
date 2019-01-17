@@ -27,12 +27,12 @@ namespace BurgerShack.Repositories
     }
 
     //GetLibrariesByBookId
-    // public IEnumerable<Library> GetLibrariesByBookId(int id)
+    // public IEnumerable<Burger> GetBurgersByCustomerId(int id)
     // {
-    //   return _db.Query<Library>($@"
-    //     SELECT * FROM librarybooks lb
-    //     INNER JOIN library l ON l.id = lb.libraryId
-    //     WHERE (bookId = @id);
+    //   return _db.Query<Burger>($@"
+    //     SELECT * FROM customerburgers cb
+    //     INNER JOIN burgers b ON b.id = cb.burgerId
+    //     WHERE (burgerId = @id);
     //   ", new { id });
     // }
 
