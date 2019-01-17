@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace BurgerShack.Models
@@ -8,6 +9,9 @@ namespace BurgerShack.Models
     [Required]
     public string Name { get; set; }
 
+    public IEnumerable<Burger> FavoriteBurgers { get; set; }
+
+    // public IEnumerable<Side> FavoriteSides { get; set; }
 
   }
 }
