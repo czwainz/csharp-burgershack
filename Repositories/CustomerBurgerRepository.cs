@@ -14,8 +14,6 @@ namespace BurgerShack.Repositories
       _db = db;
     }
 
-
-
     //GetBurgersByCustomerId
     public IEnumerable<Burger> GetBurgersByCustomerId(int id)
     {
