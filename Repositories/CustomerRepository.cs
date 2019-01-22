@@ -27,7 +27,7 @@ namespace BurgerShack.Repositories
       return newCust;
     }
 
-
+    //DeleteCustomer
     public bool DeleteCustomer(int id)
     {
       int success = _db.Execute(@"DELETE FROM Customers WHERE id = @id", new { id });
