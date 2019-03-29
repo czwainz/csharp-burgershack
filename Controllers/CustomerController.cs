@@ -51,9 +51,9 @@ namespace BurgerShack.Controllers
     {
       if (_customerRepo.DeleteCustomer(id))
       {
-        return Ok("Success!!!");
+        return Ok("Success!");
       }
-      return NotFound("No customer to delete");
+      return NotFound("No customer to delete!");
     }
 
 
