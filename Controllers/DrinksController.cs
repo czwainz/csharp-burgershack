@@ -14,7 +14,7 @@ namespace BurgerShack.Controllers
     public List<Drink> Drinks = new List<Drink>()
     {
       new Drink("Cola", "Literacola", 3f),
-      new Drink("Sprite", "A clear choice", 4f),
+      new Drink("Sprite", "A refreshingly clear choice", 4f),
       new Drink("Ginger Ale", "For your tum tum", 4)
   };
 
@@ -24,6 +24,7 @@ namespace BurgerShack.Controllers
       return Drinks;
     }
 
+    //Get one drink
     [HttpGet("{id}")]
     public ActionResult<Drink> Get(int id)
     {
